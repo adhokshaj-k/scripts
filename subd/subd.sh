@@ -2,14 +2,15 @@
 
 #need input
 domain=$1
+cd recon
+mkdir $domain
 
+curl -s https://crt.sh/\?q\=\%.$domain\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u > $domain/$domain-crt.txt
 
-curl -s https://crt.sh/\?q\=\%.$domain\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u > $domain-crt.txt
+sublist3r -d $domain -v -o $domain/$domain-sublister.txt
 
-sublist3r -d $domain -v -o $domain-sublister.txt
+cat $domain/$domain-crt.txt | ~/go/bin/anew $domain/$domain-sublister.txt
 
-cat $domain-crt.txt | ~/go/bin/anew $domain-sublister.txt
-
-cat $domain-sublister.txt | htppx -sc > httpx_domains.txt
+cat $domain/$domain-sublister.txt | httpx -sc > $domain/$domain-httpx.txt
 
 
