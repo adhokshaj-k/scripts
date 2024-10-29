@@ -16,6 +16,7 @@ cat $domain-subdout/$domain-sublister.txt | httpx -sc > $domain-subdout/$domain-
 
 grep "200" $domain-subdout/$domain-httpx.txt > $domain-subdout/alive.txt 
 grep "403" $domain-subdout/$domain-httpx.txt > $domain-subdout/forbidden.txt 
+grep "302" $domain-subdout/$domain-httpx.txt > $domain-subdout/redirect.txt 
 
 
 
