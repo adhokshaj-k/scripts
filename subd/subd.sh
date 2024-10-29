@@ -2,6 +2,7 @@
 
 #need input
 domain=$1
+mkdir recon
 cd recon
 mkdir $domain-subdout
 
