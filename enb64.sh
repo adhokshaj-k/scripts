@@ -10,3 +10,5 @@ fi
 while IFS= read -r line; do
   echo "$line" | base64
 done < "$1"
+
+#end of the script
