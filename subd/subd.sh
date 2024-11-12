@@ -10,7 +10,7 @@ mkdir $domain-subdout
 
 curl -s https://crt.sh/\?q\=\%.$domain\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u > $domain-subdout/$domain-crt.txt
 
-subfinder -d $domain -rl 5 -v -o $domain-subdout/$domain-sub.txt
+subfinder -d $domain -rl 5 -o $domain-subdout/$domain-sub.txt
 
 cat $domain-subdout/$domain-crt.txt | ~/go/bin/anew $domain-subdout/$domain-sub.txt
 
