@@ -10,8 +10,11 @@ Features:
 Exports results into categorized files:
 
 `success.txt` - Subdomains with a `200` status code.
+
 `forbidden.txt` - Subdomains with a `403` status code.
+
 `redirects.txt` - Subdomains with a `302` status code.
+
 Simplifies domain reconnaissance workflow.
 
 ## 2. enb64
