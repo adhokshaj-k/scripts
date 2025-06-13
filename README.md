@@ -3,6 +3,7 @@ A collection of custom scripts designed to enhance efficiency in bug bounty hunt
 
 ## SUBD
 Description: Automates subdomain enumeration, certificate checking, and probing using tools like Sublist3r and HTTPX.
+
 [More Details :bangbang:](/subd/)
 
 
